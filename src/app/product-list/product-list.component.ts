@@ -1,23 +1,25 @@
-import { Component } from '@angular/core';
-
-import { products } from '../products';
+import { Component, Input } from '@angular/core';
+import { Product, products } from '../products';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
-export class ProductAlertsCompoent {
-
+@Component({
+  selector: 'app-product-alerts',
+  templateUrl: './product-alerts.component.html',
+  styleUrls: ['./product-alerts.component.css'],
+})
+export class ProductAlertsComponent {
+  @Input() product!: Product;
 }
 export class ProductListComponent {
   products = products;
-
   share() {
     window.alert('The product has been shared!');
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.
